@@ -4,20 +4,28 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import React from 'react';
 import Clock from './Clock';
+import Header from './Component/Header';
+import Greeting from './Greeting';
 
+
+import Footer from "./Component/footer";
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  // return (
+  //   <>
+  //   <Header name ="khushi" age="19"/>
+
+
+  //     </>
+  // )
   return (
-    <>
-    <h1>Hello</h1>
-    <p style={{color:"red"}}>This is my first react</p>
-    <p>This is a JSX example.</p>
-      <Clock /> 
-
-      </>
-  )
+  <div>
+    <h1>Hello, React!</h1>
+    <Greeting name="John" message="Let's learn React together!" />
+    <Footer/>
+  </div>
+);
 }
 
 export default App
