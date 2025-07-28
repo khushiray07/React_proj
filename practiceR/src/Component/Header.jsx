@@ -1,9 +1,21 @@
 import React from "react"
-export default function Header(props){
+import { useState } from "react";
+export default function Header(){
+
+    // const[age, setAge] = useState(18);
+    // const[name,setName]= useState("khushi");
+
+    const [count, setCount] = useState(0);
+
+    const increase = () => {
+        setCount(count + 1);
+    }
     return (
         <> 
-        <h1>Hello , I am {props.name} my age is {props.age}</h1>
-        </>
+        <h1>My age is {count} </h1>
+<button onClick={() => setCount(prevCount => prevCount + 1)}>
+  Increment
+</button>        </>
 
     )
 }

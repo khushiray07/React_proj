@@ -7,10 +7,10 @@
 
 // }
 
-import React from 'react';
+// import React from 'react';
 
-function Footer() {
-  return <footer>© 2025 React Beginner Course</footer>
-}
+// function Footer() {
+//   return <footer>© 2025 React Beginner Course</footer>
+// }
 
-export default Footer;
+// export default Footer;

@@ -1,32 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import  { useState, useEffect } from 'react';
 import './App.css'
 import React from 'react';
-import Clock from './Clock';
 import Header from './Component/Header';
-import Greeting from './Greeting';
 
 
-import Footer from "./Component/footer";
 
 function App() {
+  const [count, setCount] = useState(0);
 
-  // return (
-  //   <>
-  //   <Header name ="khushi" age="19"/>
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCount(prevCount => prevCount + 1);
+    }, 1000);
 
+    return () => clearInterval(timer);
+  }, []);
 
-  //     </>
-  // )
   return (
-  <div>
-    <h1>Hello, React!</h1>
-    <Greeting name="John" message="Let's learn React together!" />
-    <Footer/>
-  </div>
-);
+    <div>
+      <h1>React Hooks Demo</h1>
+      <h2>Count: {count}</h2>
+      <button onClick={() => setCount(prevCount => prevCount + 1)}>
+        Increment
+      </button>
+    </div>
+  );
 }
 
-export default App
-
+export default App;
