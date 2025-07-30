@@ -2,28 +2,26 @@ import  { useState, useEffect } from 'react';
 import './App.css'
 import React from 'react';
 import Header from './Component/Header';
+import EventHandler from './Component/EventHandler';
+
 
 
 
 function App() {
-  const [count, setCount] = useState(0);
+const [showMessage, setShowMessage] = useState(false);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCount(prevCount => prevCount + 1);
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
+ 
 
   return (
-    <div>
-      <h1>React Hooks Demo</h1>
-      <h2>Count: {count}</h2>
-      <button onClick={() => setCount(prevCount => prevCount + 1)}>
-        Increment
-      </button>
-    </div>
+  <>
+  <h1>Event Handler</h1>
+  <button onClick={() => setShowMessage(!showMessage)}>
+  Toggle Message
+</button>
+{showMessage && <p>Hello, React Event Handling!</p>}
+<EventHandler />
+
+  </>
   );
 }
 
