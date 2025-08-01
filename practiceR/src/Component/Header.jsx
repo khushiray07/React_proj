@@ -1,21 +1,20 @@
-import React from "react"
-import { useState } from "react";
-export default function Header(){
+import React from 'react';
 
-    // const[age, setAge] = useState(18);
-    // const[name,setName]= useState("khushi");
+function Header() {
+  const items = ['Apple', 'Banana', 'Orange', 'Mango'];
 
-    const [count, setCount] = useState(0);
-
-    const increase = () => {
-        setCount(count + 1);
-    }
-    return (
-        <> 
-        <h1>My age is {count} </h1>
-<button onClick={() => setCount(prevCount => prevCount + 1)}>
-  Increment
-</button>        </>
-
-    )
+  return (
+    <>
+      <h1>React List Rendering</h1>
+      <ul className="item-list">
+        {items.map((item, index) => (
+          <li key={index} >
+            {item}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
 }
+
+export default Header;
