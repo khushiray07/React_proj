@@ -1,28 +1,16 @@
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Home from './Components/Home';
-import About from './Components/About';
-import Contact from './Components/Contact';
-import Layout from './Layout';
-import { Book } from './Components/Book';
-
-
+import { increment, decrement } from './CounterReducer';
+import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+
   return (
     <>
-    <Router>
-
-      <Routes>
-        <Route path="/" element={<Layout />}>
-        <Route index element={<Home/>} />
-        <Route path="home" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact/>} />
-        <Route path="book" element={<Book />} />
-        </Route>
-      </Routes>
-    </Router>
-    
+      <h1>HELLO</h1>
+      <h1>count: {count}</h1>
+      <button onClick={() => dispatch(increment())}>Increment</button>
+      <button onClick={() => dispatch(decrement())}>Decrement</button>
     </>
   );
 }
